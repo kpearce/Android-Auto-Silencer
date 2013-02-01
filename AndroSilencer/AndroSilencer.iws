@@ -27,21 +27,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\gen\com\example\AndroSilencer\Manifest (1).java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\gen\com\example\AndroSilencer\R (1).java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\src\com\example\AndroSilencer\LocationTypeActivity.java" afterPath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java" />
-      <change type="MOVED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\src\com\example\AndroSilencer\MainActivity.java" afterPath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java" />
-      <change type="MOVED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\src\com\example\AndroSilencer\WifiScanResultsActivity.java" afterPath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiScanResultsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroSilencer.ipr" afterPath="$PROJECT_DIR$/AndroSilencer.ipr" />
+      <change type="MOVED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\res\layout\locationTypeSelection.xml" afterPath="$PROJECT_DIR$/res/layout/locationtypeselection.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroSilencer.iws" afterPath="$PROJECT_DIR$/AndroSilencer.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
     </list>
     <ignored path="AndroSilencer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/main.xml" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359608464108" ignored="false" />
     <file path="/MainActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359610784952" ignored="false" />
-    <file path="/Dummy.txt" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359686358914" ignored="false" />
+    <file path="/Dummy.txt" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359688509210" ignored="false" />
     <file path="/LocationTypeActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359618253829" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359613300836" ignored="false" />
     <file path="/fragment.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359687802578" ignored="false" />
@@ -156,7 +149,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="70" selection-start="384" selection-end="384" vertical-scroll-proportion="0.41189426">
+            <state line="16" column="70" selection-start="384" selection-end="384" vertical-scroll-proportion="0.43187067">
               <folding />
             </state>
           </provider>
@@ -206,6 +199,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
     <option name="myDateState">
       <MyDateState />
     </option>
@@ -532,22 +526,27 @@
       <created>1359604951777</created>
       <updated>1359604951777</updated>
     </task>
+    <task id="LOCAL-00001" summary="renamed some packages and deleted some oddities">
+      <created>1359688521990</created>
+      <updated>1359688521990</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.276901" sideWeight="0.6997207" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32568148" sideWeight="0.6997207" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32960895" sideWeight="0.49713057" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30027932" sideWeight="0.49713057" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30027932" sideWeight="0.49713057" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.547486" sideWeight="0.4978479" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32960895" sideWeight="0.4978479" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -558,7 +557,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.6997207" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.6703911" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5875421" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -606,7 +605,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed some packages and deleted some oddities" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -619,6 +618,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="renamed some packages and deleted some oddities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -748,7 +748,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="70" selection-start="384" selection-end="384" vertical-scroll-proportion="0.41189426">
+        <state line="16" column="70" selection-start="384" selection-end="384" vertical-scroll-proportion="0.43187067">
           <folding />
         </state>
       </provider>
