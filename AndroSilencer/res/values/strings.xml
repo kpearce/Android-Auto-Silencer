@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AndroSilencer</string>
-    <string name="newLocation">New Location</string>
+    <string name="newLocation">New Location</string><string name="doscan">Do Scan</string><string name="use_saved">Use Saved</string>
 </resources>

@@ -26,5 +26,7 @@ public class MainActivity extends Activity {
     public void newLocationClick(View view){
         Intent newLocationIntent = new Intent(view.getContext(),LocationTypeActivity.class);
         startActivity(newLocationIntent);
+//        WifiTypeSelection locationSelectionFragment = WifiTypeSelection.newInstance();
+//        locationSelectionFragment.show(getFragmentManager(),"dialog");
     }
 }

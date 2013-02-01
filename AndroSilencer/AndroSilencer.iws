@@ -25,19 +25,41 @@
       </GlobalState>
     </option>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" name="Default" comment="">
+    <list default="true" id="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" name="Default" comment="renamed some packages and deleted some oddities">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/NetworkConfigurationActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiTypeSelection.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/savedorscanswitch.xml" />
+      <change type="DELETED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\out\production\AndroSilencer\com\example\AndroSilencer\LocationTypeActivity$WifiScanReceiver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\out\production\AndroSilencer\com\example\AndroSilencer\LocationTypeActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\out\production\AndroSilencer\com\example\AndroSilencer\MainActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\out\production\AndroSilencer\com\example\AndroSilencer\WifiScanResultsActivity$ScanResultAdapter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\kurtis\Documents\GitHub\AndroSilencer\AndroSilencer\out\production\AndroSilencer\com\example\AndroSilencer\WifiScanResultsActivity.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R$id.class" afterPath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R$layout.class" afterPath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R$string.class" afterPath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R.class" afterPath="$PROJECT_DIR$/out/production/AndroSilencer/com/example/AndroSilencer/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroSilencer.iws" afterPath="$PROJECT_DIR$/AndroSilencer.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java" afterPath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java" afterPath="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
     </list>
     <ignored path="AndroSilencer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/main.xml" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359608464108" ignored="false" />
-    <file path="/MainActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359610784952" ignored="false" />
-    <file path="/Dummy.txt" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359688677455" ignored="false" />
-    <file path="/LocationTypeActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359618253829" ignored="false" />
+    <file path="/MainActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359691627469" ignored="false" />
+    <file path="/Dummy.txt" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359693483056" ignored="false" />
+    <file path="/LocationTypeActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359694884133" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359613300836" ignored="false" />
     <file path="/fragment.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359687802578" ignored="false" />
     <file path="/WifiScanResultsActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359618210806" ignored="false" />
+    <file path="/LocationSelectionFragment.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359694547737" ignored="false" />
+    <file path="/savedorscanswitch.xml" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359692355413" ignored="false" />
+    <file path="/NetworkConfigurationActivity.java" changelist="3aa31383-b8a1-4c60-a7f9-1a5337c1bff6" time="1359693440920" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +75,50 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/NetworkConfigurationActivity.java" line="20" class="net.kpearce.AndroSilencer.NetworkConfigurationActivity" package="net.kpearce.AndroSilencer">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java" line="50" class="net.kpearce.AndroSilencer.LocationTypeActivity" package="net.kpearce.AndroSilencer">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java" line="44" class="net.kpearce.AndroSilencer.LocationTypeActivity" package="net.kpearce.AndroSilencer">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -97,10 +162,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LocationTypeActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LocationTypeActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+            <state line="42" column="31" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.28735632">
               <folding />
             </state>
           </provider>
@@ -139,39 +204,50 @@
       <file leaf-file-name="WifiScanResultsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiScanResultsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="102" selection-start="1823" selection-end="1823" vertical-scroll-proportion="0.0">
+            <state line="37" column="78" selection-start="1131" selection-end="1159" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NetworkConfigurationActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/NetworkConfigurationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="565" selection-end="565" vertical-scroll-proportion="-8.84">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="70" selection-start="384" selection-end="384" vertical-scroll-proportion="0.43187067">
+            <state line="29" column="15" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scanresulttextview.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/scanresulttextview.xml">
+      <file leaf-file-name="WifiTypeSelection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiTypeSelection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="78" selection-start="924" selection-end="924" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="savedorscanswitch.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/savedorscanswitch.xml">
           <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="6" column="4" selection-start="260" selection-end="260" vertical-scroll-proportion="-4.08">
               <folding />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Manifest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/com/example/AndroSilencer/Manifest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="19" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -195,6 +271,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitLogSettings">
@@ -216,6 +293,11 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/locationtypeselection.xml" />
         <option value="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationSelectionFragment.java" />
+        <option value="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/NetworkConfigurationActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/savedorscanswitch.xml" />
+        <option value="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiTypeSelection.java" />
+        <option value="$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java" />
       </list>
     </option>
   </component>
@@ -305,6 +387,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroSilencer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroSilencer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -533,7 +633,11 @@
       <created>1359688686344</created>
       <updated>1359688686344</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="renamed some packages and deleted some oddities">
+      <created>1359688712098</created>
+      <updated>1359688712098</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -541,15 +645,17 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.276901" sideWeight="0.6997207" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32568148" sideWeight="0.6997207" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32960895" sideWeight="0.49713057" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22525108" sideWeight="0.6997207" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32681563" sideWeight="0.49713057" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927758" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30027932" sideWeight="0.49713057" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30027932" sideWeight="0.49426112" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32960895" sideWeight="0.4978479" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4678771" sideWeight="0.50071734" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -560,13 +666,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2482066" sideWeight="0.6703911" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2482066" sideWeight="0.6997207" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5875421" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32927758" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -635,30 +739,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiScanResultsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="106" selection-start="1823" selection-end="1823" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/scanresulttextview.xml">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/example/AndroSilencer/Manifest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/wfiscanresults.xml">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -727,7 +807,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiScanResultsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="102" selection-start="1823" selection-end="1823" vertical-scroll-proportion="0.0">
+        <state line="37" column="78" selection-start="1131" selection-end="1159" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="15" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -742,16 +829,35 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/NetworkConfigurationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+        <state line="20" column="0" selection-start="565" selection-end="565" vertical-scroll-proportion="-8.84">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/savedorscanswitch.xml">
+      <provider editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="260" selection-end="260" vertical-scroll-proportion="-4.08">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/WifiTypeSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="70" selection-start="384" selection-end="384" vertical-scroll-proportion="0.43187067">
+        <state line="29" column="78" selection-start="924" selection-end="924" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/kpearce/AndroSilencer/LocationTypeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="31" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.28735632">
           <folding />
         </state>
       </provider>

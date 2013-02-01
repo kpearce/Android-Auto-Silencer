@@ -1,6 +1,8 @@
 package net.kpearce.AndroSilencer;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -29,10 +31,25 @@ public class LocationTypeActivity extends Activity {
     }
 
     public void onChooseWifi(View view) {
+        WifiTypeSelection typeSelection = WifiTypeSelection.newInstance();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("Network chooser");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+       typeSelection.show(ft,"Network chooser");
+    }
 
+    public void onChooseWifiScan(View view){
         IntentFilter intentFilter = new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
         this.getApplicationContext().registerReceiver(new WifiScanReceiver(), intentFilter);
         wifiManager.startScan();
+    }
+
+    public void onChooseSavedWifi(View view){
+        Intent intent = new Intent(this,NetworkConfigurationActivity.class);
+        startActivity(intent);
     }
 
     public void onChooseGps(View view){
