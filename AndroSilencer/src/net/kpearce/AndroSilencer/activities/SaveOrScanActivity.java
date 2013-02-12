@@ -1,4 +1,4 @@
-package net.kpearce.AndroSilencer;
+package net.kpearce.AndroSilencer.activities;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

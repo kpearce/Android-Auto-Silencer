@@ -1,13 +1,7 @@
-package net.kpearce.AndroSilencer;
+package net.kpearce.AndroSilencer.activities;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
