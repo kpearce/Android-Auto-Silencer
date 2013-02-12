@@ -11,5 +11,10 @@
             android:id="@+id/newLocationButton"
             android:layout_marginTop="33dp"
             android:onClick="newLocationClick"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/manage_button"
+            android:id="@+id/button" android:layout_gravity="center"/>
 </LinearLayout>
 

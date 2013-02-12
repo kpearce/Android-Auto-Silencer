@@ -3,5 +3,5 @@
     <string name="app_name">AndroSilencer</string>
     <string name="newLocation">New Location</string><string name="doscan">Do Scan</string><string name="use_saved">Use Saved</string>
     <string name="log_tag">AndroSilencer</string>
-    <string name="wifi_saves_file">wifiSilent.dat</string>
+    <string name="wifi_saves_file">wifiSilent.dat</string><string name="manage_button">Manage</string>
 </resources>
