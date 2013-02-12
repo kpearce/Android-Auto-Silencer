@@ -17,5 +17,6 @@
         <activity android:name="net.kpearce.AndroSilencer.LocationTypeActivity"/>
         <activity android:name="net.kpearce.AndroSilencer.WifiScanResultsActivity" android:label="Scan Results"/>
         <activity android:name="net.kpearce.AndroSilencer.NetworkConfigurationActivity" android:label="Networks"/>
+        <activity android:name="net.kpearce.AndroSilencer.SaveOrScanActivity" android:label="Saved or Scan"/>
     </application>
 </manifest>

@@ -8,11 +8,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/doscan"
-            android:id="@+id/button1" android:layout_column="10" android:layout_gravity="center"
+            android:id="@id/doscanbutton" android:layout_column="10" android:layout_gravity="center"
             android:onClick="onChooseWifiScan"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/use_saved"
-            android:id="@+id/button2" android:layout_column="10" android:onClick="onChooseSavedWifi"/>
+            android:id="@id/useSavedButton" android:layout_column="10" android:onClick="onChooseSavedWifi"/>
 </LinearLayout>
