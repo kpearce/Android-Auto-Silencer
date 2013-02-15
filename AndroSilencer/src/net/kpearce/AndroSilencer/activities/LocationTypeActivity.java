@@ -18,7 +18,7 @@ public class LocationTypeActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.locationtypeselection);
+        setContentView(R.layout.location_type_selection);
     }
 
     public void onChooseWifi(View view) {
