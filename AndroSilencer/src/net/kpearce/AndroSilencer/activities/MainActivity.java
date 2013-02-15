@@ -41,4 +41,9 @@ public class MainActivity extends Activity {
         Intent newLocationIntent = new Intent(view.getContext(),LocationTypeActivity.class);
         startActivity(newLocationIntent);
     }
+
+    public void manageLocationsClick(View view){
+        Intent manageLocationIntent = new Intent(view.getContext(),ManageLocationsActivity.class);
+        startActivity(manageLocationIntent);
+    }
 }

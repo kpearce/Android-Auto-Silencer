@@ -3,14 +3,17 @@ package net.kpearce.AndroSilencer.activities;
 import android.*;
 import android.R;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.text.AndroidCharacter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +21,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import net.kpearce.AndroSilencer.StaticFileManager;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -36,6 +41,25 @@ public class WifiScanResultsActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
         setListAdapter(new ScanResultAdapter(this, R.layout.simple_list_item_1,wifiManager.getScanResults()));
+    }
+
+    @Override
+    protected void onListItemClick(final ListView l, final View v, final int position, long id) {
+        new AlertDialog.Builder(this)
+                .setMessage("Silence device when near " + ((TextView) v).getText())
+                .setTitle("Add Location")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String ssid = ((ScanResult) l.getItemAtPosition(position)).SSID;
+                        try {
+                            StaticFileManager.saveSSID(v.getContext(), ssid);
+                        } catch (IOException e) {
+                            Log.e(getString(com.example.AndroSilencer.R.string.log_tag), "Failed to write to file", e);
+                        }
+                    }
+                })
+                .setNegativeButton("No", null).show();
     }
 
     class ScanResultAdapter extends ArrayAdapter<ScanResult>{

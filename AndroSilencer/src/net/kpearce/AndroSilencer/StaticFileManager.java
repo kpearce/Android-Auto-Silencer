@@ -17,8 +17,11 @@ public class StaticFileManager {
 
     public static LinkedList<String> getSavedSSIDs(Context context) throws IOException {
         File file = new File(context.getFilesDir(), context.getString(R.string.wifi_saves_file));
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         LinkedList<String> ssids = new LinkedList<String>();
+        if(!file.exists()){
+            return ssids;
+        }
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String ssid = bufferedReader.readLine();
         while (ssid != null){
             if(!ssids.contains(ssid)){

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import net.kpearce.AndroSilencer.StaticFileManager;
 
 import java.io.*;
 import java.util.List;
@@ -34,7 +35,7 @@ public class NetworkConfigurationActivity extends ListActivity {
     }
 
     @Override
-    protected void onListItemClick(final ListView l, View v, final int position, long id) {
+    protected void onListItemClick(final ListView l, final View v, final int position, long id) {
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setMessage("Silence device when near " + ((TextView) v).getText())
                 .setTitle("Add Location")
@@ -43,34 +44,15 @@ public class NetworkConfigurationActivity extends ListActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String ssid = ((WifiConfiguration) l.getItemAtPosition(position)).SSID;
                         ssid = ssid.substring(1,ssid.length()-1);
-                        saveSsid(ssid);
+//                        saveSsid(ssid);
+                        try {
+                            StaticFileManager.saveSSID(v.getContext(),ssid);
+                        } catch (IOException e) {
+                            Log.e(getString(com.example.AndroSilencer.R.string.log_tag),"Failed to write to file",e);
+                        }
                     }
                 })
                 .setNegativeButton("No", null).show();
-    }
-
-    private void saveSsid(String ssid) {
-        try {
-            File file = new File(getFilesDir(),getString(com.example.AndroSilencer.R.string.wifi_saves_file));
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            String fromFileSsid = bufferedReader.readLine();
-            while (fromFileSsid != null){
-                if(ssid.equalsIgnoreCase(fromFileSsid)){
-                    bufferedReader.close();
-                    return;
-                }
-                fromFileSsid = bufferedReader.readLine();
-            }
-            bufferedReader.close();
-
-            FileOutputStream outputStream = openFileOutput(getString(com.example.AndroSilencer.R.string.wifi_saves_file),MODE_APPEND);
-            PrintWriter printWriter = new PrintWriter(outputStream);
-            printWriter.println(ssid);
-            printWriter.close();
-        } catch (FileNotFoundException e){
-        } catch (IOException e) {
-            Log.e(getString(com.example.AndroSilencer.R.string.log_tag),"Failed to write to file",e);
-        }
     }
 
     class WifiConfigurationListAdapter extends ArrayAdapter<WifiConfiguration>{

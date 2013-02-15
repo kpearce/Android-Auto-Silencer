@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 import com.example.AndroSilencer.R;
+import net.kpearce.AndroSilencer.StaticFileManager;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -29,7 +30,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class WifiLocationSilenceService extends Service {
     private final Timer timer = new Timer();
-    private static final int MINUTE_DELAY = 1;
+    private static final int MINUTE_DELAY = 15;
     private String WIFI_SAVE_FILE;
     private WifiManager wifiManager;
     private WifiScanTimerTask wifiScanTimerTask;
@@ -84,20 +85,10 @@ public class WifiLocationSilenceService extends Service {
             File wifiSaves = new File(getFilesDir(),WIFI_SAVE_FILE);
             if (wifiSaves.exists()) {
                 try {
-                    BufferedReader bufferedReader = new BufferedReader(new FileReader(wifiSaves));
-                    LinkedList<String> ssids = new LinkedList<String>();
-                    String ssid = bufferedReader.readLine();
-                    while (ssid != null){
-                        ssid = ssid.toUpperCase();
-                        if (!ssids.contains(ssid)) {
-                            ssids.add(ssid);
-                        }
-                        ssid = bufferedReader.readLine();
-                    }
-                    bufferedReader.close();
+                    LinkedList<String> ssids = StaticFileManager.getSavedSSIDs(context);
                     boolean foundOne = false;
                     for (ScanResult scanResult : wifiManager.getScanResults()) {
-                        foundOne = ssids.contains(scanResult.SSID.toUpperCase());
+                        foundOne = ssids.contains(scanResult.SSID);
                         if(foundOne){break;}
                     }
 

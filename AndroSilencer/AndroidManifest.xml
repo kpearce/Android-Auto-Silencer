@@ -22,6 +22,7 @@
         </activity>
         <activity android:name="net.kpearce.AndroSilencer.activities.LocationTypeActivity"/>
         <activity android:name="net.kpearce.AndroSilencer.activities.WifiScanResultsActivity" android:label="Scan Results"/>
+        <activity android:name="net.kpearce.AndroSilencer.activities.ManageLocationsActivity" android:label="Manage Locations"/>
         <activity android:name="net.kpearce.AndroSilencer.activities.NetworkConfigurationActivity" android:label="Networks"/>
         <activity android:name="net.kpearce.AndroSilencer.activities.SaveOrScanActivity" android:label="Saved or Scan"/>
         <service android:name="net.kpearce.AndroSilencer.services.WifiLocationSilenceService"/>
