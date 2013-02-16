@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+   <ListPreference
+           android:key="poll_time_minutes"
+           android:title="@string/poll_time_title"
+           android:dialogTitle="@string/poll_time_dialog_title"
+           android:entries="@array/poll_time_options"
+           android:entryValues="@array/poll_time_values"
+           android:defaultValue="@string/poll_time_default" />
+
+
+</PreferenceScreen>

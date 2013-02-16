@@ -8,10 +8,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import com.example.AndroSilencer.R;
 import net.kpearce.AndroSilencer.services.WifiLocationSilenceService;
+import net.kpearce.AndroSilencer.setttings.SettingsFragment;
 
 public class MainActivity extends Activity {
-
-    private LinearLayout switchView;
 
     /**
      * Called when the activity is first created.
@@ -34,7 +33,6 @@ public class MainActivity extends Activity {
             startService(intent);
         }
 
-        switchView = (LinearLayout) this.findViewById(R.id.switchLayout);
     }
 
     public void newLocationClick(View view){
@@ -45,5 +43,11 @@ public class MainActivity extends Activity {
     public void manageLocationsClick(View view){
         Intent manageLocationIntent = new Intent(view.getContext(),ManageLocationsActivity.class);
         startActivity(manageLocationIntent);
+    }
+
+    public void openSettings(View view){
+        getFragmentManager().beginTransaction()
+                        .replace(android.R.id.content, new SettingsFragment())
+                        .commit();
     }
 }

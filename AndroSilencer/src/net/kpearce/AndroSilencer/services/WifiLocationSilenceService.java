@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
@@ -16,7 +17,6 @@ import net.kpearce.AndroSilencer.StaticFileManager;
 
 import java.io.*;
 import java.util.LinkedList;
-import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -29,8 +29,7 @@ import java.util.concurrent.TimeUnit;
  * To change this template use File | Settings | File Templates.
  */
 public class WifiLocationSilenceService extends Service {
-    private final Timer timer = new Timer();
-    private static final int MINUTE_DELAY = 15;
+    private static final int MINUTE_DELAY = 1;
     private String WIFI_SAVE_FILE;
     private WifiManager wifiManager;
     private WifiScanTimerTask wifiScanTimerTask;
@@ -39,6 +38,8 @@ public class WifiLocationSilenceService extends Service {
     private IntentFilter intentFilter;
     private AudioManager audioManager;
     private ScheduledThreadPoolExecutor executor;
+    private Handler toastHandler;
+    private boolean silencedByService;
 
     public IBinder onBind(Intent intent) {
         return null;
@@ -54,10 +55,12 @@ public class WifiLocationSilenceService extends Service {
         intentFilter = new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
         applicationContext = this;
         executor = new ScheduledThreadPoolExecutor(1);
+        silencedByService = false;
     }
 
     @Override
     public void onStart(Intent intent, int startId) {
+        toastHandler = new Handler(applicationContext.getMainLooper());
         executor.scheduleAtFixedRate(wifiScanTimerTask, 0, MINUTE_DELAY, TimeUnit.MINUTES);
     }
 
@@ -93,16 +96,28 @@ public class WifiLocationSilenceService extends Service {
                     }
 
                     if(foundOne){
-                        if (audioManager.getMode() != AudioManager.RINGER_MODE_VIBRATE) {
+                        if (audioManager.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
                             audioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
-                            Toast.makeText(applicationContext, "Silencing device", Toast.LENGTH_LONG);
+                            silencedByService = true;
+                            toastHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getApplicationContext(), "Sound disabled", Toast.LENGTH_LONG).show();
+                                }
+                            });
                             Log.d("AndroSilencer", "Silencing the device");
                         }
                     }
                     else {
-                        if (audioManager.getMode() != AudioManager.RINGER_MODE_NORMAL) {
+                        if (audioManager.getRingerMode() != AudioManager.RINGER_MODE_NORMAL && silencedByService) {
+                            silencedByService = false;
                             audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-                            Toast.makeText(applicationContext, "Restoring sound", Toast.LENGTH_LONG);
+                            toastHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getApplicationContext(), "Sound restored", Toast.LENGTH_LONG).show();
+                                }
+                            });
                             Log.d("AndroSilencer", "Restoring sound");
                         }
                     }

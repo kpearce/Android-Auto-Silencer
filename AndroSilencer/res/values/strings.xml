@@ -3,5 +3,10 @@
     <string name="app_name">AndroSilencer</string>
     <string name="newLocation">New Location</string><string name="doscan">Do Scan</string><string name="use_saved">Use Saved</string>
     <string name="log_tag">AndroSilencer</string>
-    <string name="wifi_saves_file">wifiSilent.dat</string><string name="manage_button">Manage</string>
+    <string name="wifi_saves_file">wifiSilent.dat</string><string name="manage_button">Manage</string><string name="settings">Settings</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="poll_time_title">Poll Time</string>
+    <string name="poll_time_dialog_title">Poll Time Minutes</string>
+    <string name="poll_time_default">"10 Minutes"</string>
 </resources>
