@@ -4,12 +4,12 @@
         android:layout_height="fill_parent"
         android:layout_width="fill_parent">
    <ListPreference
-           android:key="poll_time_minutes"
+           android:key="@string/poll_time_minutes_key"
            android:title="@string/poll_time_title"
            android:dialogTitle="@string/poll_time_dialog_title"
-           android:entries="@array/poll_time_options"
-           android:entryValues="@array/poll_time_values"
-           android:defaultValue="@string/poll_time_default" />
+           android:entryValues="@array/poll_time_options"
+           android:entries="@array/poll_time_values"
+           android:defaultValue="@string/default_poll" />
 
 
 </PreferenceScreen>

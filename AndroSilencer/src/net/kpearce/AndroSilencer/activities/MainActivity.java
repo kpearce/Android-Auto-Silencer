@@ -3,12 +3,12 @@ package net.kpearce.AndroSilencer.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import com.example.AndroSilencer.R;
 import net.kpearce.AndroSilencer.services.WifiLocationSilenceService;
-import net.kpearce.AndroSilencer.setttings.SettingsFragment;
+import net.kpearce.AndroSilencer.setttings.SettingsActivity;
 
 public class MainActivity extends Activity {
 
@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.main);
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         boolean running = false;
@@ -46,8 +47,7 @@ public class MainActivity extends Activity {
     }
 
     public void openSettings(View view){
-        getFragmentManager().beginTransaction()
-                        .replace(android.R.id.content, new SettingsFragment())
-                        .commit();
+        Intent settingsActivity = new Intent(view.getContext(),SettingsActivity.class);
+        startActivity(settingsActivity);
     }
 }

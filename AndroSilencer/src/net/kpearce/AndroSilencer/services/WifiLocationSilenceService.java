@@ -1,22 +1,23 @@
 package net.kpearce.AndroSilencer.services;
 
 import android.app.Service;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
+import android.content.*;
 import android.media.AudioManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
+import android.os.FileObserver;
 import android.os.Handler;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 import com.example.AndroSilencer.R;
 import net.kpearce.AndroSilencer.StaticFileManager;
 
 import java.io.*;
+import java.util.Date;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.TimerTask;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -28,7 +29,7 @@ import java.util.concurrent.TimeUnit;
  * Time: 7:42 PM
  * To change this template use File | Settings | File Templates.
  */
-public class WifiLocationSilenceService extends Service {
+public class WifiLocationSilenceService extends Service implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final int MINUTE_DELAY = 1;
     private String WIFI_SAVE_FILE;
     private WifiManager wifiManager;
@@ -40,6 +41,7 @@ public class WifiLocationSilenceService extends Service {
     private ScheduledThreadPoolExecutor executor;
     private Handler toastHandler;
     private boolean silencedByService;
+    private FileObserver fileObserver;
 
     public IBinder onBind(Intent intent) {
         return null;
@@ -50,23 +52,68 @@ public class WifiLocationSilenceService extends Service {
         WIFI_SAVE_FILE = this.getString(R.string.wifi_saves_file);
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
-        wifiScanTimerTask = new WifiScanTimerTask();
         wifiBroadcastReceiver = new WifiBroadcastReceiver();
         intentFilter = new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
         applicationContext = this;
-        executor = new ScheduledThreadPoolExecutor(1);
+        executor = getExecutor();
         silencedByService = false;
+        File file = null;
+        try {
+            file = StaticFileManager.getOrCreateWifiSavesFile(this);
+        } catch (IOException e) {
+            Log.d(getString(R.string.log_tag), "could not access file system");
+        }
+        if(file != null){
+            fileObserver = new FileObserver(file.getPath(),FileObserver.MODIFY) {
+                @Override
+                public void onEvent(int event, String path) {
+                    int delay = Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(applicationContext).getString(getString(R.string.poll_time_minutes_key), getString(R.string.default_poll)));
+                    startOrRestartTimer(delay);
+                }
+            };
+        }
+
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        sp.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    private ScheduledThreadPoolExecutor getExecutor() {
+        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
+        executor.setExecuteExistingDelayedTasksAfterShutdownPolicy(false);
+        return executor;
     }
 
     @Override
     public void onStart(Intent intent, int startId) {
         toastHandler = new Handler(applicationContext.getMainLooper());
-        executor.scheduleAtFixedRate(wifiScanTimerTask, 0, MINUTE_DELAY, TimeUnit.MINUTES);
+        fileObserver.startWatching();
+        int delay = Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.poll_time_minutes_key), getString(R.string.default_poll)));
+        startOrRestartTimer(delay);
     }
 
     @Override
     public void onDestroy() {
         Toast.makeText(this,"AndroSilencer might function incorrectly",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if(getString(R.string.poll_time_minutes_key).equals(key)){
+            int newDelay = Integer.valueOf(sharedPreferences.getString(key, getString(R.string.default_poll)));
+            startOrRestartTimer(newDelay);
+        }
+    }
+
+    private void startOrRestartTimer(int delay) {
+        if(!executor.isShutdown()){
+            executor.shutdown();
+        }
+        if(wifiScanTimerTask != null){
+            wifiScanTimerTask.cancel();
+        }
+        wifiScanTimerTask = new WifiScanTimerTask();
+        executor = getExecutor();
+        executor.scheduleAtFixedRate(wifiScanTimerTask,0, delay, TimeUnit.MINUTES);
     }
 
     class WifiScanTimerTask extends TimerTask{
@@ -129,7 +176,7 @@ public class WifiLocationSilenceService extends Service {
                 }
             }
             else {
-                Log.d(getString(R.string.log_tag), "No saved wifi ssids");
+                Log.d(getString(R.string.log_tag), "No saved wifi ssids "+new Date(System.currentTimeMillis()).toString());
             }
         }
     }

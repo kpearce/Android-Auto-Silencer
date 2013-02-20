@@ -15,8 +15,15 @@ import java.util.LinkedList;
  */
 public class StaticFileManager {
 
-    public static LinkedList<String> getSavedSSIDs(Context context) throws IOException {
+    public static File getOrCreateWifiSavesFile(Context context) throws IOException {
         File file = new File(context.getFilesDir(), context.getString(R.string.wifi_saves_file));
+        //noinspection ResultOfMethodCallIgnored
+        file.createNewFile();
+        return file;
+    }
+
+    public static LinkedList<String> getSavedSSIDs(Context context) throws IOException {
+        File file = getOrCreateWifiSavesFile(context);
         LinkedList<String> ssids = new LinkedList<String>();
         if(!file.exists()){
             return ssids;
@@ -51,7 +58,7 @@ public class StaticFileManager {
         }
 
         currentSSIDs.remove(toRemove);
-        FileWriter writer = new FileWriter(new File(context.getFilesDir(),context.getString(R.string.wifi_saves_file)),false);
+        FileWriter writer = new FileWriter(getOrCreateWifiSavesFile(context),false);
         PrintWriter printWriter = new PrintWriter(writer);
         for (String currentSSID : currentSSIDs) {
             printWriter.println(currentSSID);

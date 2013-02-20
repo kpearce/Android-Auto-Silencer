@@ -9,4 +9,6 @@
     <string name="poll_time_title">Poll Time</string>
     <string name="poll_time_dialog_title">Poll Time Minutes</string>
     <string name="poll_time_default">"10 Minutes"</string>
+    <string name="default_poll">"10"</string>
+    <string name="poll_time_minutes_key">POLLTIMEMINUTESKEY</string>
 </resources>

@@ -24,6 +24,7 @@ import android.widget.TextView;
 import net.kpearce.AndroSilencer.StaticFileManager;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,7 +41,18 @@ public class WifiScanResultsActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-        setListAdapter(new ScanResultAdapter(this, R.layout.simple_list_item_1,wifiManager.getScanResults()));
+        setListAdapter(new ScanResultAdapter(this, R.layout.simple_list_item_1,clean(wifiManager.getScanResults())));
+    }
+
+    private List<ScanResult> clean(List<ScanResult> scanResults) {
+        List<ScanResult> toRemove = new ArrayList<ScanResult>();
+        for (ScanResult scanResult : scanResults) {
+            if (scanResult.SSID.trim().equals("")) {
+                toRemove.add(scanResult);
+            }
+        }
+        scanResults.removeAll(toRemove);
+        return scanResults;
     }
 
     @Override
