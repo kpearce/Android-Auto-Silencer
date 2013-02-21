@@ -1,0 +1,32 @@
+fingerprint:  E2:0E:AA:32:BD:DC:4A:4A:A1:13:E4:92:94:72:B3:8E
+MD5:  0qBS6BVbLP6-SeZQPqR9o8aIFoXI2Izi_vACmCQ
+
+C:\Users\kurtis\.android>keytool -v -list -alias androiddebugkey -keystore debug
+.keystore -storepass android -keypass android
+Alias name: androiddebugkey
+Creation date: Jan 31, 2013
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Android Debug, O=Android, C=US
+Issuer: CN=Android Debug, O=Android, C=US
+Serial number: 294239ac
+Valid from: Thu Jan 31 20:51:04 CST 2013 until: Fri Jan 31 20:51:04 CST 2014
+Certificate fingerprints:
+         MD5:  E2:0E:AA:32:BD:DC:4A:4A:A1:13:E4:92:94:72:B3:8E
+         SHA1: E7:33:45:C4:A1:B1:CA:8A:14:4F:50:66:57:13:56:B2:7A:6A:D4:78
+         SHA256: 6F:D1:A2:9D:F5:1B:C3:1E:03:B5:7F:4B:8F:54:FD:AA:A8:C9:71:01:C9:
+10:10:1A:BE:02:ED:8C:F3:3E:90:3D
+         Signature algorithm name: SHA256withRSA
+         Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 8C 08 62 A0 71 C5 4B 19   55 EB 77 56 82 48 ED A0  ..b.q.K.U.wV.H..
+0010: C4 6E 56 81                                        .nV.
+]
+]
+

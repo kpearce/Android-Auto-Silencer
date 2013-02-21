@@ -3,10 +3,10 @@ package net.kpearce.AndroSilencer.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import com.example.AndroSilencer.R;
+import net.kpearce.AndroSilencer.activities.wifi.ManageLocationsActivity;
 import net.kpearce.AndroSilencer.services.WifiLocationSilenceService;
 import net.kpearce.AndroSilencer.setttings.SettingsActivity;
 

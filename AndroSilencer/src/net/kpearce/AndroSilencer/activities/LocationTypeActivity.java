@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 import com.example.AndroSilencer.R;
+import net.kpearce.AndroSilencer.activities.gps.MapBaseLocationActivity;
+import net.kpearce.AndroSilencer.activities.wifi.SaveOrScanActivity;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,6 +29,7 @@ public class LocationTypeActivity extends Activity {
     }
 
     public void onChooseGps(View view){
-        Toast.makeText(view.getContext(), "Cheers GPS", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, MapBaseLocationActivity.class);
+        startActivity(intent);
     }
 }

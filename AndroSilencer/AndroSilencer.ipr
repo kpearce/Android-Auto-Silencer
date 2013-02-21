@@ -170,5 +170,12 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
   </component>
+  <component name="libraryTable">
+    <library name="maps">
+      <CLASSES />
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
 </project>
 

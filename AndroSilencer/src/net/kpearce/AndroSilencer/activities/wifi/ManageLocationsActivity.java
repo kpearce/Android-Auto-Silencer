@@ -1,4 +1,4 @@
-package net.kpearce.AndroSilencer.activities;
+package net.kpearce.AndroSilencer.activities.wifi;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
