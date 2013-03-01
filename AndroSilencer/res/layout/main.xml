@@ -7,10 +7,15 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/newLocation"
+            android:text="@string/wifiLocation"
             android:id="@+id/newLocationButton"
             android:layout_marginTop="33dp"
-            android:onClick="newLocationClick"/>
+            android:onClick="addWifiLocationClick"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gpsLocation"
+            android:id="@+id/button2" android:onClick="addGpsLocationClick"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,5 +28,10 @@
             android:id="@+id/button1"
             android:onClick="openSettings"
             android:layout_gravity="center"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@id/status_message"/>
 </LinearLayout>
 

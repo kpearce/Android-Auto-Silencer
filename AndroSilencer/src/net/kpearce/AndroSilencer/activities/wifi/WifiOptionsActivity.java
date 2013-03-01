@@ -1,47 +1,62 @@
 package net.kpearce.AndroSilencer.activities.wifi;
 
-import android.*;
 import android.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.net.wifi.ScanResult;
+import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.text.AndroidCharacter;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import net.kpearce.AndroSilencer.StaticFileManager;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
  * User: kurtis
- * Date: 1/31/13
- * Time: 12:30 AM
+ * Date: 2/24/13
+ * Time: 11:45 AM
  * To change this template use File | Settings | File Templates.
  */
-public class WifiScanResultsActivity extends ListActivity {
+public class WifiOptionsActivity extends ListActivity {
 
-//    private ListView scanResultsListView;
+    private List<String> wifiResults;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-        setListAdapter(new ScanResultAdapter(this, R.layout.simple_list_item_1,clean(wifiManager.getScanResults())));
+        List<ScanResult> scanResults = wifiManager.getScanResults();
+        List<WifiConfiguration> configurations = wifiManager.getConfiguredNetworks();
+        wifiResults = combineResults(scanResults, configurations);
+        setListAdapter(new ArrayAdapter<String>(this, R.layout.simple_list_item_1, wifiResults));
+    }
+
+    private List<String> combineResults(List<ScanResult> scanResults, List<WifiConfiguration> configurations) {
+        Set<String> results = new HashSet<String>();
+        for (ScanResult scanResult : clean(scanResults)) {
+            results.add(scanResult.SSID);
+        }
+
+        for (WifiConfiguration configuration : configurations) {
+            results.add(configuration.SSID.substring(1, configuration.SSID.length() - 1));
+        }
+        try {
+            results.removeAll(StaticFileManager.getSavedSSIDs(this));
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        ArrayList<String> ret = new ArrayList<String>(results);
+        Collections.sort(ret);
+        return ret;
     }
 
     private List<ScanResult> clean(List<ScanResult> scanResults) {
@@ -57,38 +72,22 @@ public class WifiScanResultsActivity extends ListActivity {
 
     @Override
     protected void onListItemClick(final ListView l, final View v, final int position, long id) {
-        new AlertDialog.Builder(this)
+        AlertDialog dialog = new AlertDialog.Builder(this)
                 .setMessage("Silence device when near " + ((TextView) v).getText())
                 .setTitle("Add Location")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String ssid = ((ScanResult) l.getItemAtPosition(position)).SSID;
+                        String ssid = (String) l.getItemAtPosition(position);
                         try {
                             StaticFileManager.saveSSID(v.getContext(), ssid);
+                            wifiResults.remove(ssid);
+                            l.invalidateViews();
                         } catch (IOException e) {
                             Log.e(getString(com.example.AndroSilencer.R.string.log_tag), "Failed to write to file", e);
                         }
                     }
                 })
                 .setNegativeButton("No", null).show();
-    }
-
-    class ScanResultAdapter extends ArrayAdapter<ScanResult>{
-
-        public ScanResultAdapter(Context context, int textViewResourceId, List<ScanResult> objects) {
-            super(context, textViewResourceId, objects);
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ScanResult scanResult = getItem(position);
-            LayoutInflater inflater = (LayoutInflater) getContext()
-            			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-            TextView viewById = (TextView) inflater.inflate(R.layout.simple_list_item_1,parent,false);
-            viewById.setText(scanResult.SSID);
-            return viewById;
-        }
     }
 }

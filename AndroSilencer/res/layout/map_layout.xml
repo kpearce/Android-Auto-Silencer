@@ -10,15 +10,33 @@
             android:layout_width="fill_parent"
             android:id="@+id/mapview"
             android:clickable="true"
-            android:apiKey="0qBS6BVbLP6-SeZQPqR9o8aIFoXI2Izi_vACmCQ"
-
-            android:focusable="false"/>
-    <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton" android:layout_alignRight="@+id/mapview"
-            android:layout_alignTop="@+id/mapview" android:src="@drawable/ic_layers"
-            android:background="@android:color/transparent" android:baselineAlignBottom="true"
-            android:clickable="true" android:onClick="onLayerButtonClick" style="@style/layer_button"/>
+            android:apiKey="0qBS6BVbLP6-UZw2eB0v_Dq-W70zc1Cm7Z01V4Q"
+            android:focusable="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="7dp"
+            android:layout_alignParentTop="true"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="50dp"
+            android:layout_height="150dp" android:layout_marginLeft="220dp" android:layout_alignParentEnd="true"
+            android:layout_marginTop="50dp">
+        <ImageButton
+                android:layout_width="38dp"
+                android:layout_height="39dp"
+                android:id="@+id/imageButton"
+                android:src="@drawable/layer_selector"
+                android:background="@android:color/transparent" android:baselineAlignBottom="true"
+                android:clickable="true" android:onClick="onLayerButtonClick" style="@style/layer_button"
+                android:layout_alignParentEnd="true" android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+        <!--<ImageButton-->
+                <!--android:layout_width="33dp"-->
+                <!--android:layout_height="33dp"-->
+                <!--android:id="@+id/imageButton1"-->
+                <!--android:src="@android:drawable/ic_menu_mylocation"-->
+                <!--android:background="@android:color/transparent" android:cropToPadding="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_alignParentEnd="false" android:layout_marginTop="50dp"/>-->
+    </LinearLayout>
 
 </RelativeLayout>
