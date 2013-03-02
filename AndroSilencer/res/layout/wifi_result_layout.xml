@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="150dp" android:gravity="left">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@id/left_wifi_result_textbox" android:layout_gravity="center"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@id/wifi_strength_image_view" android:layout_gravity="center_vertical|right" android:src="@drawable/stat_sys_wifi_signal_4"
+            android:layout_weight="1.21" android:layout_marginLeft="250dp"/>
+</RelativeLayout>

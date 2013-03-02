@@ -1,8 +1,5 @@
 package net.kpearce.AndroSilencer.services;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.*;
 import android.media.AudioManager;
@@ -14,7 +11,6 @@ import android.util.Log;
 import android.widget.Toast;
 import com.example.AndroSilencer.R;
 import net.kpearce.AndroSilencer.StaticFileManager;
-import net.kpearce.AndroSilencer.activities.MainActivity;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,13 +22,6 @@ import java.util.TimerTask;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created with IntelliJ IDEA.
- * User: kurtis
- * Date: 2/11/13
- * Time: 7:42 PM
- * To change this template use File | Settings | File Templates.
- */
 public class WifiLocationSilenceService extends Service implements SharedPreferences.OnSharedPreferenceChangeListener {
     public static final int REGISTER_CLIENT = 0;
     public static final int UNREGISTER_CLIENT = 1;
