@@ -1,10 +1,12 @@
 package net.kpearce.AndroSilencer.activities;
 
 import android.app.Activity;
-import android.app.DialogFragment;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.location.LocationManager;
 import android.os.*;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.TextView;
 import com.example.AndroSilencer.R;
@@ -16,11 +18,71 @@ import net.kpearce.AndroSilencer.fragments.gps.NameGpsDialog;
 import net.kpearce.AndroSilencer.services.WifiLocationSilenceService;
 import net.kpearce.AndroSilencer.setttings.SettingsActivity;
 
+import java.util.Date;
+
 public class MainActivity extends Activity {
     private static final String STATUS_STRING = "statusString";
     private TextView statusBox;
-    private WifiLocationSilenceService.WifiServiceCallback callback;
     private LocationManager locationManager;
+    private TextView nextPollTimeBox;
+    private boolean isBound;
+
+    private Messenger mainMessenger = new Messenger(new IncomingMessageHandler());
+
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            serviceMessenger = new Messenger(service);
+            Message message = Message.obtain(null,WifiLocationSilenceService.REGISTER_CLIENT);
+            message.replyTo = mainMessenger;
+            try {
+                serviceMessenger.send(message);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+            Message requestSSID = Message.obtain(null,WifiLocationSilenceService.REQUEST_CURRENT_SSID);
+            requestSSID.replyTo = mainMessenger;
+            try {
+                serviceMessenger.send(requestSSID);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+
+            Message requestPollTime = Message.obtain(null,WifiLocationSilenceService.REQUEST_NEXT_POLL);
+            requestPollTime.replyTo = mainMessenger;
+            try {
+                serviceMessenger.send(requestPollTime);
+            } catch (RemoteException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            serviceMessenger = null;
+            isBound = false;
+        }
+    };
+    private Messenger serviceMessenger;
+
+    class IncomingMessageHandler extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case WifiLocationSilenceService.SEND_POLL:
+                    long pollTime = (Long) msg.obj;
+                    updateNextPollBox(pollTime);
+                    break;
+                case WifiLocationSilenceService.SEND_SSID:
+                    String ssid = msg.getData().getString("ssid");
+                    updateStatusBox(ssid);
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    }
 
     /**
      * Called when the activity is first created.
@@ -37,63 +99,62 @@ public class MainActivity extends Activity {
         }
 
         statusBox = (TextView) findViewById(R.id.status_message);
-        String silencedLocation = WifiLocationSilenceService.getSilencedLocation();
-        statusBox.setText(silencedLocation==null?"":"Near "+silencedLocation);
-        callback = getWifiServiceCallback();
-        WifiLocationSilenceService.registerCallback(callback);
-
+        nextPollTimeBox = (TextView) findViewById(R.id.next_poll_time_text_box);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
     }
 
-    private WifiLocationSilenceService.WifiServiceCallback getWifiServiceCallback() {
-        return new WifiLocationSilenceService.WifiServiceCallback() {
-            @Override
-            public void onSilenceChanged(String msg) {
-                if (msg != null) {
-                    statusBox.setText("Near " + msg);
-                } else {
-                    statusBox.setText("");
-                }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = new Intent(this,WifiLocationSilenceService.class);
+        bindService(intent,serviceConnection,BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    private void updateStatusBox(String ssid) {
+        if(ssid != null){
+            statusBox.setText("Near "+ssid);
+        }
+        else {
+            statusBox.setText("");
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(isBound){
+            Message message = Message.obtain(null,WifiLocationSilenceService.UNREGISTER_CLIENT);
+            message.replyTo = mainMessenger;
+            try {
+                serviceMessenger.send(message);
+            } catch (RemoteException e) {
+                e.printStackTrace();
             }
-        };
+            unbindService(serviceConnection);
+            isBound = false;
+        }
+    }
+
+    private void updateNextPollBox(long pollTime) {
+        if(pollTime != 0){
+            Date d = new Date(pollTime);
+            String formattedDate = DateFormat.format("h:mm", d).toString();
+            nextPollTimeBox.setText("Next poll: "+formattedDate);
+        }
+        else {
+            nextPollTimeBox.setText("Next poll: unknown");
+        }
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(STATUS_STRING,statusBox.getText().toString());
-    }
-
-
-
-    @Override
-    protected void onPause() {
-        WifiLocationSilenceService.unRegisterCallback(callback);
-        callback = null;
-        super.onPause();
-
-    }
-
-    @Override
-    protected void onResume() {
-        if(callback != null){
-            WifiLocationSilenceService.registerCallback(callback);
-        }
-        else {
-            callback = getWifiServiceCallback();
-            WifiLocationSilenceService.registerCallback(callback);
-        }
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        if(callback != null){
-            WifiLocationSilenceService.unRegisterCallback(callback);
-            callback = null;
-        }
-        super.onDestroy();    //To change body of overridden methods use File | Settings | File Templates.
     }
 
     public void addWifiLocationClick(View view){

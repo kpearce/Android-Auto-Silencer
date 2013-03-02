@@ -33,5 +33,10 @@
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@id/status_message"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@id/next_poll_time_text_box"/>
 </LinearLayout>
 

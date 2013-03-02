@@ -18,6 +18,7 @@
             </intent-filter>
         </receiver>
         <activity android:name="net.kpearce.AndroSilencer.activities.MainActivity"
+
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
