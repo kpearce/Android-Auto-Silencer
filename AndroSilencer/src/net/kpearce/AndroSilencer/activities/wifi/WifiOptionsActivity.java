@@ -86,13 +86,13 @@ public class WifiOptionsActivity extends ListActivity {
 
     @Override
     protected void onListItemClick(final ListView l, final View v, final int position, long id) {
+        final WifiResult wifiResult = (WifiResult) l.getItemAtPosition(position);
         new AlertDialog.Builder(this)
-                .setMessage("Silence device when near " + ((TextView) v).getText())
+                .setMessage("Silence device when near " +wifiResult.SSID )
                 .setTitle("Add Location")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        WifiResult wifiResult = (WifiResult) l.getItemAtPosition(position);
                         try {
                             StaticFileManager.saveSSID(v.getContext(), wifiResult.SSID);
                             wifiResults.remove(wifiResult);
@@ -119,7 +119,9 @@ public class WifiOptionsActivity extends ListActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-            RelativeLayout view = (RelativeLayout) layoutInflater.inflate(R.layout.wifi_result_layout,null);
+            GridLayout view = (GridLayout) layoutInflater.inflate(R.layout.wifi_result_layout,null);
+//            LinearLayout view = (LinearLayout) layoutInflater.inflate(R.layout.wifi_result_layout,null);
+//            RelativeLayout view = (RelativeLayout) layoutInflater.inflate(R.layout.wifi_result_layout,null);
             ImageView wifiStrengthImageView = (ImageView) view.findViewById(R.id.wifi_strength_image_view);
             TextView textView = (TextView) view.findViewById(R.id.left_wifi_result_textbox);
             WifiResult wifiResult = items.get(position);
@@ -128,21 +130,17 @@ public class WifiOptionsActivity extends ListActivity {
             if(wifiResult.dBm != null){
                 int signalStrength = wifiResult.dBm;
                 if(signalStrength > -60){
-                    wifiStrengthImageView.setImageResource(R.drawable.stat_sys_wifi_signal_4);
+                    wifiStrengthImageView.setImageResource(R.drawable.ic_qs_wifi_4);
                 }
                 else if(signalStrength > -70){
-                    wifiStrengthImageView.setImageResource(R.drawable.stat_sys_wifi_signal_3);
+                    wifiStrengthImageView.setImageResource(R.drawable.ic_qs_wifi_3);
                 }
                 else if(signalStrength > -80){
-                    wifiStrengthImageView.setImageResource(R.drawable.stat_sys_wifi_signal_2);
+                    wifiStrengthImageView.setImageResource(R.drawable.ic_qs_wifi_2);
                 }
-                else if(signalStrength > -90){
-                    wifiStrengthImageView.setImageResource(R.drawable.stat_sys_wifi_signal_1);
+                else
+                    wifiStrengthImageView.setImageResource(R.drawable.ic_qs_wifi_1);
                 }
-                else {
-                    wifiStrengthImageView.setImageResource(R.drawable.stat_sys_wifi_signal_0);
-                }
-            }
             else {
                 wifiStrengthImageView.setVisibility(View.INVISIBLE);
             }
