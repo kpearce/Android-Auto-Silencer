@@ -7,6 +7,9 @@ import android.content.ServiceConnection;
 import android.location.LocationManager;
 import android.os.*;
 import android.text.format.DateFormat;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import com.example.AndroSilencer.R;
@@ -104,6 +107,29 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;   //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.manage_wifi:
+                manageWifiLocations();
+                return true;
+            case R.id.manage_gps:
+                return true;
+            case R.id.settings:
+                openSettings();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         Intent intent = new Intent(this,WifiLocationSilenceService.class);
@@ -169,14 +195,23 @@ public class MainActivity extends Activity {
     }
 
     public void manageLocationsClick(View view){
-        Intent manageLocationIntent = new Intent(view.getContext(),ManageLocationsActivity.class);
+        manageWifiLocations();
+    }
+
+    private void manageWifiLocations() {
+        Intent manageLocationIntent = new Intent(this,ManageLocationsActivity.class);
         startActivity(manageLocationIntent);
     }
 
-    public void openSettings(View view){
-        Intent settingsActivity = new Intent(view.getContext(),SettingsActivity.class);
+    public void openSettings(){
+        Intent settingsActivity = new Intent(this,SettingsActivity.class);
         startActivity(settingsActivity);
     }
+
+//    public void openSettings(View view){
+//        Intent settingsActivity = new Intent(view.getContext(),SettingsActivity.class);
+//        startActivity(settingsActivity);
+//    }
 
     public void chooseMap() {
         Intent intent = new Intent(this, MapBaseLocationActivity.class);

@@ -16,18 +16,6 @@
             android:layout_height="wrap_content"
             android:text="@string/gpsLocation"
             android:id="@+id/button2" android:onClick="addGpsLocationClick"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/manage_button"
-            android:id="@+id/button" android:layout_gravity="center" android:onClick="manageLocationsClick"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/settings"
-            android:id="@+id/button1"
-            android:onClick="openSettings"
-            android:layout_gravity="center"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

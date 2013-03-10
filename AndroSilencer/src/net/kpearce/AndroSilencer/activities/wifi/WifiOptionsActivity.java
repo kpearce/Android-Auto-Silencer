@@ -119,11 +119,11 @@ public class WifiOptionsActivity extends ListActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-            LinearLayout view = (LinearLayout) layoutInflater.inflate(R.layout.wifi_result_layout,null);
+            RelativeLayout view = (RelativeLayout) layoutInflater.inflate(R.layout.wifi_result_layout,null);
             ImageView wifiStrengthImageView = (ImageView) view.findViewById(R.id.wifi_strength_image_view);
             TextView textView = (TextView) view.findViewById(R.id.left_wifi_result_textbox);
             WifiResult wifiResult = items.get(position);
-            textView.setText(wifiResult.SSID+(wifiResult.dBm == null?"":" "+wifiResult.dBm+"dBm"));
+            textView.setText(wifiResult.SSID);
 
             if(wifiResult.dBm != null){
                 int signalStrength = wifiResult.dBm;

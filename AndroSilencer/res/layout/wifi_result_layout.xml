@@ -3,12 +3,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="150dp" android:gravity="left">
+              android:layout_height="300dp" android:gravity="center|left" android:minHeight="60dp">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:id="@id/left_wifi_result_textbox" android:layout_gravity="center"/>
+            android:id="@id/left_wifi_result_textbox" android:layout_gravity="center" android:textSize="18dp"
+            android:textAlignment="center" android:gravity="center_vertical"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
